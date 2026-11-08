@@ -1,0 +1,17 @@
+{
+  "name": "algo-quickjs-wasm-repro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Minimal reproduction: @gamealgo/web ships 4 QuickJS wasm variants (3 unreferenced) in Vite production builds",
+  "scripts": {
+    "build:repro": "vite build -c vite.case2-repro.config.js",
+    "build:fix": "vite build -c vite.case1-fix.config.js",
+    "verify": "node scripts/verify.mjs",
+    "smoke": "node scripts/smoke.mjs case2-repro && node scripts/smoke.mjs case1-fix"
+  },
+  "devDependencies": {
+    "@gamealgo/web": "2.1.2",
+    "vite": "7.3.7"
+  }
+}
